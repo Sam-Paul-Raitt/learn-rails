@@ -1,4 +1,23 @@
-<h3>Home</h3>
-<p>Bienvenidos a la casa de <%= @owner.name %>.</p>
-<p>Yo naci en una aldea humilde, el dia del senior <%= @owner.birthdate %>.</p>
-<p>Ahora solo quedan <%= @owner.countdown %> dias para conmemorar este feliz hecho</p>
+<%= content_for :title do %>Lewis Carnelian<% end %>
+<%= content_for :description do %>Garage Hermetique of Lewis Carnelian<% end %>
+<section>
+	<%= image_tag "garage.jpg" %>
+</section>
+<section>
+	<div class="column">
+		<h2>Stay in touch.</h2>
+	</div>
+	<div class="column">
+		<div class="form-centered">
+			<%= simple_form_for @visitor do |f| %>
+				<%= f.error_notification %>
+				<%= f.input :email, label: false, :placeholder => 'Your email address' %>
+				<br/>
+				<%= f.button :submit, "Sign up for the newsletter", :class => "submit" %>
+			<% end %>
+		</div>
+	</div>
+</section>
+
+
+</section>
